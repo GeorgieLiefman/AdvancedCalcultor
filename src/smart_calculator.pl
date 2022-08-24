@@ -2,6 +2,31 @@
 use strict;
 use warnings;
 
+my $opening_text = "Booting up smart calculator ... \n";
+
+
+sub exit {
+    my $exit_text = "Goodbye!\nShutting down smart calculator ..\n";
+    print("Press any key to exit ..\n");
+    chomp(my $key = <STDIN>);
+    print("$exit_text");
+    exit()
+
+}
+
+sub name {
+    my $name_text = "My name is Albert. Nice to meet you!\n";
+    print("$name_text");
+}
+
+sub invalid_input {
+    my $invalid_text = "Sorry this is beyond my ability.\nPlease try and enter something else ..\n";
+    print("$invalid_text");
+} 
+
+
+my ($x, $y);
+
 sub addition {
     return $x + $y;
 }
@@ -22,13 +47,6 @@ sub modulas {
     return $x % $y;
 }
 
-
-operations={'ADD':add,'PLUS':add,'SUM':add,'ADDITION':add,
-            'SUB':sub,'SUBTRACT':sub, 'MINUS':sub,
-            'DIFFERENCE':sub,'LCM':lcm,'HCF':hcf,
-            'PRODUCT':mul, 'MULTIPLY':mul,'MULTIPLICATION':mul,
-            'DIVISION':div,'MOD':mod,'REMAINDER'
-            :mod,'MODULAS':mod}
 
 my %operators = (
     'ADD' => addition(), 'PLUS' => addition(), 'SUM' => addition(),'ADDITION' => addition(),,
